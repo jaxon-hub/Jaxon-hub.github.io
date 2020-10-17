@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="pytest详解-基础知识, jaxon">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>pytest详解-基础知识 | jaxon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,9 +43,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">Hexo</span>
+                    <span class="logo-span"></span>
                 </a>
             </div>
             
@@ -142,9 +140,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">Hexo</div>
+        <div class="logo-name">jaxon</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -312,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">pytest详解-基础知识</h1>
                 </div>
             </div>
         </div>
@@ -432,9 +428,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/pytest/">
+                                <span class="chip bg-color">pytest</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -462,15 +462,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="pytest的特点"><a href="#pytest的特点" class="headerlink" title="pytest的特点"></a>pytest的特点</h2><ul>
+<li>pytest是一个非常成熟的全功能的Python测试框架，主要特点有以下几点：</li>
+<li>简单灵活，容易上手；</li>
+<li>支持参数化；</li>
+<li>能够支持简单的单元测试和复杂的功能测试，还可以用来做selenium/appnium等自动化测试、接口自动化测试（pytest+requests）;</li>
+<li>pytest具有很多第三方插件，并且可以自定义扩展，比较好用的如pytest-selenium（集成selenium）、pytest-html（html测试报告生成）、pytest-rerunfailures（失败case重复执行）、pytest-xdist（多CPU分发）、allure-pytest（生成测试报告）等；</li>
+<li>测试用例的skip和xfail处理；</li>
+<li>可以很好的和jenkins集成；</li>
+</ul>
+<h2 id="pytest执行用例的规则"><a href="#pytest执行用例的规则" class="headerlink" title="pytest执行用例的规则"></a>pytest执行用例的规则</h2><ul>
+<li>如果pytest命令行有指定目录，则从该目录中开始查找测试用例文件，如果没有指定，则从当前运行目录开始查找文件。注意，该查找是递归查找，子目录中的文件也会被查找到。</li>
+<li>并不是能够查找到目录下的所有文件，只有符合命名规则的文件才会被查找。默认规则是以test_开头或者以_test结尾的.py文件</li>
+<li>在测试文件中查找Test开头的类，以及类中以test_开头的方法，查找测试文件中test_开头的函数</li>
+</ul>
+<h2 id="自定义收集case的规则"><a href="#自定义收集case的规则" class="headerlink" title="自定义收集case的规则"></a>自定义收集case的规则</h2><ul>
+<li>在pytest.ini文件内配置：<pre class=" language-yaml"><code class="language-yaml">python_files = 'abc_*.py'    <span class="token comment" spellcheck="true">#文件名以abc_开头</span>
+python_classes = 'Login*'    <span class="token comment" spellcheck="true">#类的名称以Login开头</span>
+python_functions = 'case*'   <span class="token comment" spellcheck="true">#方法的名称以case开头</span></code></pre>
+</li>
+</ul>
+<h2 id="setup和teardown"><a href="#setup和teardown" class="headerlink" title="setup和teardown"></a>setup和teardown</h2><ul>
+<li>模块级（setup_module/teardown_module）开始于模块始末调用，全局的</li>
+<li>函数级（setup_function/teardown_function）只对函数用例生效，在函数始末调用（不在类中，在类外部）</li>
+<li>类级（setup_class/teardown_class）在类始末调用</li>
+<li>方法级（setup_method/teardown_method）在方法始末调用（在类中）</li>
+<li>方法级（setup/teardown）在方法始末调用（在类中）</li>
+</ul>
+<p><strong>注意调用顺序：setup_module&gt;setup_class&gt;setup_method&gt;setup&gt;teardown&gt;teardown_method&gt;teardown_class&gt;teardown_module</strong></p>
 
             </div>
             <hr/>
@@ -533,7 +552,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/pytest/">
+                                    <span class="chip bg-color">pytest</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -708,9 +731,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="pytest详解-基础知识">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">pytest详解-基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -733,6 +756,14 @@
                 </div>
 
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/pytest/">
+                        <span class="chip bg-color">pytest</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -746,9 +777,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="pytest详解-基础知识">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">pytest详解-基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -770,6 +801,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/pytest/">
+                        <span class="chip bg-color">pytest</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
